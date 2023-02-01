@@ -1,0 +1,33 @@
+╔════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╗
+║                                                          IN MONGOSHELL                                                         ║
+╠═════════════════════╦══════════════════════════════════════════════════════════════════════════════════════════════════════════╣
+║      Functions      ║                                             Query Syntax                                                 ║
+╠═════════════════════╬══════════════════════════════════════════════════════════════════════════════════════════════════════════╣
+║  - Insert           ║    - (une entrée) -> 'db.<collection_name>.insertOne({<data>})'                                          ║
+║                     ║    - (plusieurs)  -> 'db.<collection_name>.insertMany({<data>}}'                                         ║
+║                     ║    - format de <data>, exemple : {nom: 'Charley'}                                                        ║
+╠═════════════════════╬══════════════════════════════════════════════════════════════════════════════════════════════════════════╣
+║  - Update           ║    - (une entrée) -> 'db.<collection_name>.updateOne({<data>}, {$set: {<data>}})'                        ║                                                 ║
+║                     ║    - (plusieurs)  -> 'db.<collection_name>.updateOne({<data>}, {$set: {<data>}})'                        ║
+║                     ║    - format de <data>, exemple : {nom: 'Charley'}, {$set: {nom: 'Jean-Baptiste'}}                        ║
+╠═════════════════════╬══════════════════════════════════════════════════════════════════════════════════════════════════════════╣
+║  - Delete           ║    - (une entrée) -> 'db.<collection_name>.deleteOne({<data>})'  => exemple : {nom: 'Charley'}           ║
+║                     ║    - (plusieurs)  -> 'db.<collection_name>.deleteMany({<data>})' => exemple : {ville: 'Caen'}            ║
+║                     ║    - (tous les documents, reset la collection) -> 'db.<collection_name>.deleteMany({})'                  ║
+╠═════════════════════╩══════════════════════════════════════════════════════════════════════════════════════════════════════════╣
+╠════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╣
+║                                                          WITH PYMONGO                                                          ║
+╠═════════════════════╦══════════════════════════════════════════════════════════════════════════════════════════════════════════╣
+║      Functions      ║                                              Query Syntax                                                ║
+╠═════════════════════╬══════════════════════════════════════════════════════════════════════════════════════════════════════════╣
+║  - Insert           ║    - (une entrée) -> '<variable_de_la_collection>.insert_one({<data>})'                                  ║
+║                     ║    - (plusieurs)  -> '<variable_de_la_collection>.insert_many({<data>})'                                 ║
+╠═════════════════════╬══════════════════════════════════════════════════════════════════════════════════════════════════════════╣
+║  - Update           ║    - (une entrée) -> '<variable_de_la_collection>.update_one({<data>}, {$set: {<data>}})'                ║                                                 ║
+║                     ║    - (plusieurs)  -> '<variable_de_la_collection>.update_many({<data>}, {$set: {<data>}})'               ║
+║                     ║    - format de <data>, exemple : {nom: 'Charley'}, {$set: {nom: 'Jean-Baptiste'}}                        ║
+╠═════════════════════╬══════════════════════════════════════════════════════════════════════════════════════════════════════════╣
+║  - Delete           ║    - (une entrée) -> '<variable_de_la_collection>.delete_one({<data>})'  => exemple : {nom: 'Charley'}   ║
+║                     ║    - (plusieurs)  -> '<variable_de_la_collection>.delete_many({<data>})' => exemple : {ville: 'Caen'}    ║
+║                     ║    - (tous les documents, reset la collection) -> '<collection_name>.deleteMany({})'                     ║
+╚═════════════════════╩══════════════════════════════════════════════════════════════════════════════════════════════════════════╝
