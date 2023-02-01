@@ -5,7 +5,6 @@
 # Date Created : Wednesday 01 Feb. 2023
 # ==============================================================================
 
-
 import json
 import requests
 
@@ -15,11 +14,12 @@ from pymongo import MongoClient
 # -- Connection to the mongoDB
 client = MongoClient('mongodb://root:example@localhost:27017/')
 
-
 # -- Load API Data
 request_API = requests.get('https://pokebuildapi.fr/api/v1/pokemon')
 extract_data = request_API.text     # extract data from the request
 pokemon_data = json.loads(extract_data)     # convert into json
+
+
 
 
 def from_api_to_mongo() -> None:
@@ -147,6 +147,9 @@ def export_in_json() -> None:
     # -- Save in JSON
     with open('database.json', 'w') as export:
         json.dump(list(documents), export, indent=2)
+
+
+
 
 if __name__ == '__main__':
     from_api_to_mongo()
